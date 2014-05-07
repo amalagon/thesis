@@ -261,8 +261,8 @@ $\sigma$ in units of output power - translates to 12.9 K input temperature.
 
 In our data taking we stepped with stepsize 3 MHz. The bandwidth of the cavity was on average 4 MHz so there is 1 MHz of overlap between consecutive datasets. To calculate the SNR for an individual dataset, we need to know where the cavity was to calculate the expected axion power for bins detuned for the resonance, we need to know several state parameters such as the Q and form factor, and we of course need to know the noise. This will give us a SNR for an individual dataset. We then need to be able to combine the SNR’s for bins from different datasets with near identical frequencies to be able to say something about the combined dataset. SNR’s add in quadrature - we also need to make a weighted mean to get the weighted noise. The weighting factors for each bin were calculated to be $\sqrt{S/N^2}$ by Ed Daw in his thesis that maximize the noise - this is what we use here as well.
 
-So we take the data in for each FFT saved to file, which is actually the average of 5e5 spectra, and assign a skeleton array to hold in column 1 all the frequencies that were covered in our runs, in column 2 all the power values (if there is not already a power value there), in column 3 the noise (initially set to the standard error of the spectrum), in column 4, the $weight=1/std.err^2$, in coulumn 5 the factor by which the axion power is suppressed off resonance $h[x] = 1/(1+4Delta^2/Gamma^2)$, and in column 6 the expected axion power Pi, and in column 7 the resultant SNR. If there is already a dataset value assigned to a particular frequency bin, when a new dataset is processed we combine the datasets by doing the weighted means, setting column 3 equal to.
-%
+So we take the data in for each FFT saved to file, which is actually the average of 5e5 spectra, and assign a skeleton array to hold in column 1 all the frequencies that were covered in our runs, in column 2 all the power values (if there is not already a power value there), in column 3 the noise (initially set to the standard error of the spectrum), in column 4, the $\text{weight}=1/\text{std.err}^2$, in coulumn 5 the factor by which the axion power is suppressed off resonance $h[x] = 1/(1+4\Delta^2/\Gamma^2)$, and in column 6 the expected axion power Pi, and in column 7 the resultant SNR. If there is already a dataset value assigned to a particular frequency bin, when a new dataset is processed we combine the datasets by doing the weighted means, setting column 3 equal to.
+
 \section{Runs}
 
 \begin{table}[ht]
@@ -294,15 +294,4 @@ FREQUENCY COVERAGE
 
 OUR FINAL RESULT: EXCLUSION LIMIT PLOT
 
-\section{Wilkinson Divider}
-
-Wilkinson dividers or  power combiners are reciprocal devices that combine field amplitudes in phase. Although I am not interested in this property it is nice.
-
-Using multiple cavities at the same time was tried by Darren Kinion - he used cavities tuned to the same resonant frequency and then combined the output in phase in a Wilkinson combiner. This seems hard to do for higher frequencies because the worry is that any difference in the length of the connecting parts for the two cavities would introduce a phase difference, destroying the coherent sum. 
-
-I would propose using two different cavities at the same time that are detuned from each other. Their outputs could then have different relative phases. Although this would degrade the signal to noise ratio of each individual patch because the sum of the noise from one trace would add $\sqrt{2}$ more noise to the other patch, you would have twice as much bandwidth for looking for axions so the scanning rate is improved. Check that it is $\sqrt{2}$ not a factor of 2 degradation. Also the physical combiner is not perfect so there is some loss there. Of course you have to account for the extra time needed to analyze the traces. However, this seems less expensive than the time it takes to cool down and manually tune the cavities. One could also imagine the cavities being both tuned via a vertical insertion dielectric rod. If the rods are shifted in relative starting position, this would provide the relative detuning of the cavities.
-
-Using multiple cavities without replicating all of the electronics (mixing scheme, LNAs, network analyzer), tuning schemes, and cryostats is the main challenge. If we take our present cryostat, the space constraint is quite tight - only two wr28 flanges can really fit.
-
-The wilkinson divider allows one to use the same LNAs and electronics (just the mixing scheme). However as mentioned above, only two waveguides will really fit. If you have one waveguide dedicated to the LNA branch, so this is the signal coming out of the cryostat, then you only have waveguide left that can put power in. So either you give up the input waveguide altogether and rely on the LNAs to give you the $S_{11}$ measurement or use cables to couple power in and out.
 \end{document}
