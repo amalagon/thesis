@@ -177,40 +177,6 @@ In any case using a window means you have to integrate for longer because you lo
 
 The data analysis starts from the raw time traces. The receiver chain at the final step separates the signal into an in-phase and quadrature component using an IQ mixer. These two separated signals each go through a low pass filter with approximately 4 MHz bandpass, and then are amplified by a voltage pre-amplifier with a gain of 5. The output channels (labeled henceforth as I and Q) are then plugged into a PCI 1154 card on a Dell desktop and digitized at a rate of 10 MSa/sec, with a a digital external referene at 10 MHz. We have a data acquisition program written in Visual C$\#$ that acquires however many records we desire, with each record containing 2.56e6 samples. The data acquisition has zero deadtime. The regular running procedure is to take 15,000 records at one particular cavity setting, and then retune - 15,000 records takes 1.06 hrs. 
 
-\section{EXPECTED SENSITIVITY}
-
-The expected sensitivity we expect to achieve assuming we are dominated by statistical effects is determined by the axion power we wish to determine. The theoretical axion power on resonance in the cavity is given by 
-
-Psig = XXX
-
-For the power reaching the amplifier, the power is multiplied by a coupling factor kappa = beta/(1+beta).
-
-For usual parameters of the experiment
-
-Clmn = xxx
-
-Qloaded = xxx
-
-B = xxx
-
-V = xxx
-
-The signal to noise ratio is SNR = Psig/Pnoise, where the fluctuations in the noise power are Pnoise and given by the radiometer equation
-
-$Pnoise = Tsys/\sqrt{b*t} $
-
-For a cavity temperature of 10 K and a system noise temeprature whih is the sum of the cavity physical temperature, amplifier temperature, and effective noise temperatre of the first amplifiers, we determined this by a Y-factor measurement to be 25 K. The resolution bandwidth b should be equal to the bandwidth of the axion. While there are different models for how the energy dispersion of the axion should look, the simplest model assumes that the axions are a cold almost motionless gas of particles. Their virializiation in the galaxy provides their energy dispersion - virialization meaning that the gravitational attraction from the galaxy means that in order to not escape the galaxy the axions must have a potential energy uncertainty equal to their kinetic energy SOMETHING SOMETHING.
-
-The next simplest distribution for the axion would be to have a Maxwell-Boltzmann distribution of the energies. This can be written in terms of the energies as XXX
-
-Turner in Periodic Signatures of the Axion or Windows on the Axion Universe modifies this by including the rotation of the earth, to yield a distribution of XXX which has a Q of $10^{-6}$.
-
-If we ignore that for now and assume that the axion is a delta function, our signal to noise ratio is determined by 
-
-Psig/Pnoise.
-
-With an integration time of 1 hr, we can get a SNR of XXX.
-
 \section{DATA ANALYSIS PART 1}
 
 Starting with the raw time traces of the I and Q channel, each 37.5 GB in length, we perform a discrete Fourier transform on each using the FFTW Software library implemented in C. The two FFTs are squared and summed to yield a periodogram - the power FFT. The reason we have the FFT on both the I and Q channel is to be able to distinguish the positive frequencies from the negative frequncies, which would be impossible if we had mixed down to DC without the I and Q separation.
