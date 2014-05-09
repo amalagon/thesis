@@ -2,11 +2,13 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{setspace}
+\doublespacing
 \begin{document}
 
 \section{abstract}
 
-One of the most basic open questions in physics today concerns the nature of dark matter. There has been strong observational evidence for the existence of dark matter for nearly eighty years, yet we still know little about dark matter, despite the fact that it composes $23\%$ of our universe. One leading candidate for dark matter is the axion, a light pseudoscalar particle. Searches for the axion have been experimentally challenging, as the axion's coupling to ordinary matter is very weak. One technique that is extremely sensitive to dark matter axions is the method of resonant detection using microwave cavities and the Primakoff effect to convert axions to photons in a strong magnetic field. This method has been applied successfully to rule out models of axions from 1.9 to 3.5 $\mu$eV. However, prior to this work , the technique had not been applied to look for axions of higher mass in the 0.1 to 1 $meV$ range. It is interesting to search for axions in this mass range because it is complementary to current axion microwave cavity searches, because there are several hints that the favored axion mass is in this range, and because the recent BICEP results constrain the axion mass in a simple cosmological history to be within that region. We present here the first microwave cavity search for dark matter axion-like particles in this region. By tuning a cryogenically cooled cavity and measuring the $TM_{020}$ mode in a 7 Tesla background magnetic field, we look axion-like particles (if they form part of the dark matter)  tranforming to photons via the Primakoff effect. When the photon is on resonance with the microwave cavity, enhancement of the signal power results. Cryogenic amplifiers and a low noise receiver chain allow us to reduce our background from thermal noise. In our experiment, we ran for four months and swept the microwave cavity resonant frequency from 33.9 to 34.5 GHz, corresponding to an axion mass of 140.2  to 142.7 $\mu$eV. We are also able to set limits on hidden photon coupling to matter if these vector bosons are responsible for dark matter. As with first runs of microwave cavity detectors in the lower mass region, there are several technical challenges that must be solved in order to reach the sensitivity to observe or exclude canonical axion models. However, as we do not know where the axion mass is it is valuable to develop experiments and techniques to search for them in their entire possible mass range. If observed, axion (and ALP) dark matter would not only be an important advance in our knowledge of dark matter but also give us clues about processes at high energy scales inaccessible by other methods.
+One of the most basic open questions in physics today concerns the nature of dark matter. There has been strong observational evidence for the existence of dark matter for nearly eighty years, yet we still know little about dark matter, despite the fact that it composes $23\%$ of our universe. One leading candidate for dark matter is the axion, a light pseudoscalar particle. Searches for the axion have been experimentally challenging, as the axion's coupling to ordinary matter is very weak. One technique that is extremely sensitive to dark matter axions is the method of resonant detection using microwave cavities and the Primakoff effect to convert axions to photons in a strong magnetic field. This method has been applied successfully to rule out models of axions from 1.9 to 3.5 $\mu$eV. However, prior to this work , the technique had not been applied to look for axions of higher mass in the 0.1 to 1 $meV$ range. It is interesting to search for axions in this mass range because it is complementary to current axion microwave cavity searches, because there are several hints that the favored axion mass is in this range, and because the recent BICEP results constrain the axion mass in a simple cosmological history to be within that region. We present here the first microwave cavity search for dark matter axion-like particles in this region. By tuning a cryogenically cooled cavity and measuring the $TM_{020}$ mode in a 7 Tesla background magnetic field, we look for axion-like particles (if they form part of the dark matter) that transform to photons via the Primakoff effect. When the photon frequency equals the microwave cavity resonant frequency, the signal power is enhanced. Cryogenic amplifiers and a low noise receiver chain allow us to reduce our background from thermal noise. In our experiment, we ran for four months and swept the microwave cavity resonant frequency from 33.9 to 34.5 GHz, corresponding to an axion mass of 140.2  to 142.7 $\mu$eV. We are also able to set limits on hidden photon coupling to matter if these vector bosons are responsible for dark matter. As with the first generation of microwave cavity experiments that searched for axions in the lower mass region, there are several technical challenges that must be solved in order to reach the sensitivity to observe or exclude canonical axion models. However, as we do not know where the axion mass is it is valuable to develop experiments and techniques to search for them in their entire possible mass range. If observed, axion (and ALP) dark matter would not only be an important advance in our knowledge of dark matter but also give us clues about processes at high energy scales inaccessible by other methods.
 
 \tableofcontents
 \section{Acknowledgments}
@@ -23,21 +25,38 @@ The work done as part of the Yale Microwave Cavity Experiment (YMCE) was a searc
 
 This work describes the dark matter search; the design of the cavity, operation of the experiment, and measurements taken. The remainder of this chapter discusses the motivation for axion (and ALP) dark matter in more detail. Chapter 2 describes the technique of using microwave cavities, while Chapter 3 provides some background on astrophysics and cosmology necessary for understanding the current parameter space. Chapter 4 describes the experiment, while Chapters 5, 6, and 7 focus on the microwave cavity design and data analysis, which I worked on. This includes simulations of the cavity coupling and itsform factor, tuning, and Q response at cryogenic temperatures (Chapter 5), the construction of a data analysis pipeline and determining an exclusion limit (Chapter 6), and work on the hardware automation for the experiment (Chapter 7).
 
-\section{Why axions?}
+\section{How does the axion come/ and why is it a good dark matter candidate?}
 
 We briefly review motivations for the axion and axion-like particles (ALPs) as a dark matter candidate. For a more comprehensive discussion see \cite{hewett12}, \cite{arias12}, and \cite{kim87}. 
-
 
  \textbf{strong CP problem} \hfill \\
 
 The motivation for axions, or QCD axions, is very strong. The axion arises from a mechanism introduced to explain the puzzling fact that parity and time violation are not observed in the theory of strong interactions, Quantum Chromodynamics (QCD). This is odd, as there is a term in the QCD Lagrangian that is explicitly P- and T- violating:
+
 \begin{align*}
-L = \bar \theta g^2 G \tilde G
+\mathcal{L} = \bar \theta g^2 G \tilde G
 \end{align*}
 
-Although there is a free parameter, $\bar \theta$ in this P, T (or CP- if you believe in the CPT Theorem) violating term that can be set to zero, this constitutes a fine tuning problem as the observable $\bar \theta$ is the sum of two independent terms from two different sectors, which should not a priori cancel each other. This "strong CP problem" can be solved by introducing a new global, chiral symmetry, as proposed by Peccei and Quinn in 1977 \cite{peccei77}. The spontaneous breaking of this symmetry at some energy scale $f_a$ (that the symmetry must be broken is due to the non-vanishing quark masses) introduces the axion as the resulting massless Goldstone boson. Due to a chiral anomaly with QCD, or to rephrase due to instanton effects, the axion experiences a potential, which causes it to acquire a mass proportional to the energy scale of QCD, $\Lambda_{QCD}$ and inversely proportional to the energy scale of the symmetry breaking $f_a$ \cite{weinberg78}, \cite{wilczek78}. The role of anomalies is widespread in physics; a chiral anomaly with electromagnetic fields solves the U(1) problem, which is the question of why the $\eta\'$ is not degenerate with the pion mass. It is due to anomalies that this occurs. For more comprehensive treatment of anomalies, see \cite{bardeen07}. The axion coupling constant to matter ends up also being inversely proportional to $f_a$, so the mass and coupling constant of the axion are directly proportional. The axion coupling to gluons implies a generic coupling to photons, through mixing with the pion; although there is some model dependence for the coupling and it can be set to zero, this represents another fine tuning problem.
+where $\bar \theta$ is a phase between $-\pi$ and $\pi$, G is the gluon field tensor and $\tilde G$ is the dual, or $G_{ab} = \epsilon-{abcd} G^{cd}$. To see that it is parity and time violating, construct the color electric and magnetic field equivalents from the tensor: for the electromagnetic field tensor $FF = E^2 -B^2$ and $F\tilde F = E\dot B$. Therefore for the gluon field tensor, $G\tilde G = E_a \dot B_a$. Under a parity transformation ($x \rightarrow -x$), $E \rightarrow E$ and $B \rightarrow -B$. Under a time transformation, $
+E \rightarrow E$ and $B \rightarrow -B$.  Therefore the product $E\dot B$ is not symmetric under parity and time reversal. By the CPT theorem [NEEDSREF], T-violation is equivalent to CP-violation.
 
-The term axion-like particles (ALPs) describes bosons that, like the axion, acquire a mass through some explicit symmetry breaking of a new symmetry, although not necessarily due to an interaction with QCD. Familons and majorons are two such examples of ALPs \cite{kim87}, but they arise generically in string theories and extensions to the standard model, as the mechanism of an additional U(1) symmetry is a minimal extension, and anomalies must often take place to cancel divergences. For ALPs, the coupling and mass are no longer necessarily connected, so there are two free parameters to their theory. However, the idea of a light, spinless, neutral, chargeless boson is common for both axions and ALPs.
+\footnote{We note that the reason the equivalent CP violating term in QED does not arise $F\tilde F$ is because it is a total four-divergence. This means, for fields that are vanishing small as you approach spatial infinity, that the term goes to zero when integrating the Lagrangian. Because the gluon fields are self-interacting (you can equivalently say QCD is non-abelian) the term $G \tilde G$ is not zero as you go to infinity, and so the four divergence has a finite effect.}
+
+ From this CP violating term we should see a neutron electric dipole moment [NEEDSREF] [NEEDSPIC]. However measurements of the neutron EDM have been consistent with zero, placing an upper boud on $\bar \theta < 10^{-10}$.
+
+Although there is a free parameter, $\bar \theta$ in this P, T (or CP- if you believe in the CPT Theorem) violating term that can be set to zero, this constitutes a fine tuning problem as the observable $\bar \theta$ is the sum of two independent terms from two different sectors, which should not a priori cancel each other.
+
+\begin{align*}
+\bar \theta = \theta + \text{arg det} \mathcal{M}
+\end{align*}
+
+The physical meaning of these terms is that $\theta$ is the density of instantons. Instantons are tunneling events that occur being different QCD vacua. We know that QCD has a non-trivial vacua because the introduction of such a vacua solves the $U(1)_A$ problem, which is the question of why the $\eta'$ is not degenerate with the pion mass \cite{thooft76}. The problem is a question of symmetry breaking - [NEEDSEXPLANATION]. $\mathcal{M}$ is the quark mass matrix: $\text{arg det} \mathcal{M} = m_um_dm_s$ the product of the quark masses when real. If there is a massless quark, the value above is undefined and $\bar \theta$ is also undefined. However, we believe there is evidence that the lightest quark, the up, is not massless and has mass between 0.3-0.7 MeV [NEEDSREF].
+
+ This "strong CP problem", or the fine tuning problem of why $\bar \theta$ is less than a billionth of a radian when there is no reason to believe it should be so small, can be solved by introducing a new global, chiral symmetry, as proposed by Peccei and Quinn in 1977 \cite{peccei77}. The spontaneous breaking of this symmetry at some energy scale $f_a$ (that the symmetry must be broken is due to the non-vanishing quark masses) introduces the axion as the resulting massless Goldstone boson. Due to a chiral anomaly with QCD, or to rephrase due to instanton effects, the axion experiences a potential, which causes it to acquire a mass proportional to the energy scale of QCD, $\Lambda_{QCD}$ and inversely proportional to the energy scale of the symmetry breaking $f_a$ \cite{weinberg78}, \cite{wilczek78}. The role of anomalies is widespread in physics; a chiral anomaly with electromagnetic fields solves the U(1) problem, which is the question of why the $\eta'$ is not degenerate with the pion mass. It is due to anomalies that this occurs. For more comprehensive treatment of anomalies, see \cite{bardeen07}. The axion coupling constant to matter ends up also being inversely proportional to $f_a$, so the mass and coupling constant of the axion are directly proportional. The axion coupling to gluons implies a generic coupling to photons, through mixing with the pion; although there is some model dependence for the coupling and it can be set to zero, this represents another fine tuning problem.
+
+[NEEDSPIC] of axion to gluon coupling, axion to pion coupling
+
+The term axion-like particles (ALPs) describes bosons that, like the axion, acquire a mass through some explicit symmetry breaking of a new symmetry, although not necessarily due to an anomalous interaction with QCD. Familons and majorons are two such examples of ALPs \cite{kim87}, but they arise generically in string theories  and extensions to the standard model,\cite{masso06}, \cite{hewett12}, \cite{arias12} as the mechanism of an additional U(1) symmetry is a minimal extension, and anomalies must often take place to cancel divergences. For ALPs, the coupling and mass are no longer necessarily connected, so there are two free parameters to their theory. However, the idea of a light, spinless, neutral, chargeless boson is common for both axions and ALPs.
 
  \textbf{Models of the axion} \hfill \\
 
@@ -74,15 +93,26 @@ g_{a\gamma\gamma}^{KSVZ} &= \frac{\alpha}{2\pi f_a}(\frac{E}{N}-\frac{2}{3}\frac
 \\ &= 1.93\times10^{-15}\text{GeV}^{-1}(\frac{E}{N}-\frac{2}{3}\frac{4+z}{1+z})(\frac{m_a}{10^{-5}\text{eV}})
 \end{align*}
 
-In conclusion, for the two photon interaction for which $\mathscript{L} = g_{a\gamma\gamma}E\dotB a$, the coupling is
+In conclusion, for the two photon interaction for which $\mathcal{L} = g_{a\gamma\gamma}E\dot B a$, the coupling is
 
 \begin{align*}
-g_{a\gamma\gamma} &= -\frac{3\alpha}{8\pi f_a}\xsi = - \frac{m_a/\text{eV}}{0.69\times10^{10}\text{ GeV}}\xsi 
-\\ \xsi &= \frac{4}{3}(\frac{E}{N} - 1.92 \pm 0.08)
+g_{a\gamma\gamma} &= -\frac{3\alpha}{8\pi f_a}\xi = - \frac{m_a/\text{eV}}{0.69\times10^{10}\text{ GeV}}\xi 
+\\ \xi &= \frac{4}{3}(\frac{E}{N} - 1.92 \pm 0.08)
 \end{align*}
 
 $E/N$ is the ratio of the color to electromagnetic anomalies. For the DFSZ mode it is 8/3, for the KVSZ model it is 0. It cannot be guaranteed that $E/N$ does not equal 2, however, in which case the coupling to photons would be severely suppressed.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{1dexclusionlimit}
+\caption{Constraints on the axion mass (and thus energy scale) from \cite{raffelt80}. Striped lines are constraints; blank are projected constraints; and dotted are dependent on the cosmological history of the axion.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{2dexclusionplot}
+\caption{Summary of the ALP and axion parameter space. In yellow are shown the axion model bounds. ADMX, in green, and their experimental limits begin to constrain the axion models. Helioscopes, led by CAST, and their limits are shown in blue; photon regeneration expts labeled as Lasers exclude the upper right region but do not assume anything about dark matter so are more rigorous. The dashed line labeled SN1987A is the exclusion on the axion mass extrapolated from the observation of neutrino events from SN1987A.}
+\end{figure}
 
 \section{Detecting axions}
 
