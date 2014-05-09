@@ -26,19 +26,19 @@ We briefly review motivations for the axion and axion-like particles (ALPs) as a
 
 The motivation for axions, or QCD axions, is very strong. The axion arises from a mechanism introduced to explain the puzzling fact that parity and time violation are not observed in the theory of strong interactions, Quantum Chromodynamics (QCD). This is odd, as there is a term in the QCD Lagrangian that is explicitly P- and T- violating:
 \begin{align*}
-\mathscript{L} = \bar \theta g^2 G \tilde G
+L = \bar \theta g^2 G \tilde G
 \end{align*}
 
-Although there is a free parameter, $\bar \theta$ in this P, T (or CP- if you believe in the CPT Theorem) violating term that can be set to zero, this constitutes a fine tuning problem as the observable $\bar \theta$ is the sum of two independent terms from two different sectors, which should not a priori cancel each other. This "strong CP problem" can be solved by introducing a new global, chiral symmetry, as proposed by Peccei and Quinn in 1977 \cite{peccei77}. The spontaneous breaking of this symmetry at some energy scale $f_a$ (that the symmetry must be broken is due to the non-vanishing quark masses) introduces the axion as theresulting massless Goldstone boson. Due to a chiral anomaly with QCD, or to rephrase due to instanton effects, the axion acquires a mass proportional to the energy scale of QCD, $\Lambda_{QCD}$ and inversely proportional to the energy scale of the symmetry breaking $f_a$ \cite{weinberg78}, \cite{wilczek78}. The axion coupling constant to matter ends up also being inversely proportional to $f_a$, so the mass and coupling constant of the axion are directly proportional. The axion coupling to gluons implies a generic coupling to photons, through mixing with the pion; although there is some model dependence for the coupling and it can be set to zero, this represents another fine tuning problem.
+Although there is a free parameter, $\bar \theta$ in this P, T (or CP- if you believe in the CPT Theorem) violating term that can be set to zero, this constitutes a fine tuning problem as the observable $\bar \theta$ is the sum of two independent terms from two different sectors, which should not a priori cancel each other. This "strong CP problem" can be solved by introducing a new global, chiral symmetry, as proposed by Peccei and Quinn in 1977 \cite{peccei77}. The spontaneous breaking of this symmetry at some energy scale $f_a$ (that the symmetry must be broken is due to the non-vanishing quark masses) introduces the axion as the resulting massless Goldstone boson. Due to a chiral anomaly with QCD, or to rephrase due to instanton effects, the axion experiences a potential, which causes it to acquire a mass proportional to the energy scale of QCD, $\Lambda_{QCD}$ and inversely proportional to the energy scale of the symmetry breaking $f_a$ \cite{weinberg78}, \cite{wilczek78}. The role of anomalies is widespread in physics; a chiral anomaly with electromagnetic fields solves the U(1) problem, which is the question of why the $\eta\'$ is not degenerate with the pion mass. It is due to anomalies that this occurs. For more comprehensive treatment of anomalies, see \cite{bardeen07}. The axion coupling constant to matter ends up also being inversely proportional to $f_a$, so the mass and coupling constant of the axion are directly proportional. The axion coupling to gluons implies a generic coupling to photons, through mixing with the pion; although there is some model dependence for the coupling and it can be set to zero, this represents another fine tuning problem.
 
-The term axion-like particles (ALPs) describes bosons that, like the axion, acquire a mass through some explicit symmetry breaking of a new symmetry, although not necessarily due to an interaction with QCD. Familons and majorons are two such examples of ALPs \cite{kim87}. For ALPs, the coupling and mass are no longer necessarily connected, so there are two free parameters to their theory. However, the idea of a light, spinless, neutral, chargeless boson is common for both axions and ALPs.
+The term axion-like particles (ALPs) describes bosons that, like the axion, acquire a mass through some explicit symmetry breaking of a new symmetry, although not necessarily due to an interaction with QCD. Familons and majorons are two such examples of ALPs \cite{kim87}, but they arise generically in string theories and extensions to the standard model, as the mechanism of an additional U(1) symmetry is a minimal extension, and anomalies must often take place to cancel divergences. For ALPs, the coupling and mass are no longer necessarily connected, so there are two free parameters to their theory. However, the idea of a light, spinless, neutral, chargeless boson is common for both axions and ALPs.
 
 \item \textbf{Models of the axion} \hfill \\
 
 The first model of the axion came from introducing the new symmetry through two Higgs doublets, as proposed by Peccei and Quinn. The two doublets, $\lambda_1$ and $\lambda_2$ combine to have a non-zero vacuum expectation value. The phase of the vacuum expectation value is the axion; by current algebra techniques that mass of the axion can be computed to be 
 
 \begin{align*}
-m_a = \frac{Nm_\pi f_\pi}{v_F}\frac{\sqrt{z}}{1+z}(\frac{1}{x}+x}) = (23 \text{keV})(\frac{1}{x}+x)
+m_a = \frac{Nm_\pi f_\pi}{v_F}\frac{\sqrt{z}}{1+z}(\frac{1}{x}+x) = (23 \text{keV})(\frac{1}{x}+x)
 \end{align*}
 
 for $ x = <\lambda_1>/<\lambda_2>$ is the ratio of the vacuum expectation values of the doublets and $z = m_u/m_d$ is the ratio of the up and down quark masses.
@@ -55,9 +55,51 @@ m_a = \frac{f_\pi}{f_a} m_\pi N \frac{\sqrt{z}}{1+z}
 
 For $z= 0.56$, $f_\pi = 93 \text{ MeV}$, and $m_\pi = 135\text{ MeV}$, $m_a \approx \frac{10^7\text{GeV}}{f_a}eV$.
 
-Another model, the Kim, Vainshtein, Shiman, Zakharov model \cite{kim79},\cite{shifman80}, extends the Peccei Quinn mechanism by introducing a new heavy quark. The axion then couples directly to this heavy quark
+Another model, the Kim, Vainshtein, Shiman, Zakharov model \cite{kim79},\cite{shifman80}, extends the Peccei Quinn mechanism by introducing a new heavy quark and complex scalar field, as well as a discrete symmetry. The axion then couples directly to this heavy quark and through the quark, to ordinary matter. The axion mass is then:
 
+\begin{align*}
+m_a = \frac{\sqrt{z}}{1+z}m_\pi\frac{f_\pi}{f_a}
+\end{align*}
 
+and the coupling to two photons is:
+
+\begin{align*}
+g_{a\gamma\gamma}^{KSVZ} &= \frac{\alpha}{2\pi f_a}(\frac{E}{N}-\frac{2}{3}\frac{4+z}{1+z}) 
+\\ &= 1.93\times10^{-15}\text{GeV}^{-1}(\frac{E}{N}-\frac{2}{3}\frac{4+z}{1+z})(\frac{m_a}{10^{-5}\text{eV}})
+\end{align*}
+
+In conclusion, for the two photon interaction for which $\mathscript{L} = g_{a\gamma\gamma}E\dotB a$, the coupling is
+
+\begin{align*}
+g_{a\gamma\gamma} &= -\frac{3\alpha}{8\pi f_a}\xsi = - \frac{m_a/\text{eV}}{0.69\times10^{10}\text{ GeV}}\xsi 
+\\ \xsi &= \frac{4}{3}(\frac{E}{N} - 1.92 \pm 0.08)
+\end{align*}
+
+$E/N$ is the ratio of the color to electromagnetic anomalies. For the DFSZ mode it is 8/3, for the KVSZ model it is 0. It cannot be guaranteed that $E/N$ does not equal 2, however, in which case the coupling to photons would be severely suppressed.
+
+\end{description}
+
+\section{Detecting axions}
+
+Astrophysical arguments can constrain the axion mass severely. The requirement is that axions, which can produced in the cores of stars and act as an additional energy loss channel, have couplings lower than those which would produce a conflict with observation. The limits on the coupling strength to photons for globular clusters and the limit on the coupling strength to nucleons in the case of supernova SN1987A can be translated into limits on the axion mass of $m_a \leq 10^{-2} \text{eV}$ or $f_a \geq 10^9\text{GeV}$ \cite{raffelt08}.
+
+I briefly review the techniques used to search for axions:
+
+\begin{description}
+
+\item \textbf{Solar axions} \hfill \\
+
+Here one uses the Primakoff effect to search for axions produced in the sun due to the strong electric and magnetic fields in the plasma. By aiming a dipole magnet at the sun, the axions streaming from the sun can reconvert into photons (x-rays) and then be detected. The main experiment here is CAST \cite{cast11}, which has begun to edge out the globular cluster limit although not completely.  As \cite{raffelt08} notes, because the massive axions are converting to massless photons, there is a large momentum mismatch. The massive axion as momentum $k_a = (\omega^2 - m_a^2)^{1/2}$ while the photon has momentum $k_\gamma = \omega$. The difference is $q = k_\gamma - k_a \approx m_a^2/2\omega$ for $m_a \ll \omega$, so the length over which one can coherently detect a signal is limited, so conversion is a function of length.
+
+\item{Bragg diffraction}
+
+\item{Vacuum Birefringence}
+
+\item{RF cavity}
+
+While in the helioscopes the conversion was proportional to the length of the detector, for axions traveling along the magnetic field, for axion to photon transitions in the presence of a background magnetic field with high-Q cavities, the conversion probability depends on the overalp of the magnetic field and the electric field of the cavity mode, so thus the volume.
+
+Another experiment used the electric fields of crystals to convert 
 \subsection{Why microwave cavities?}
 The work in this thesis describes a search for dark matter axion-like particles, using a cryogenically cooled microwave cavity in a strong magnetic field. Methods to search for these dark matter particles have been ongoing for the last four decades; however, since dark matter candidates by definition interact very feebly with ordinary matter, searching for any of these particles is experimentally challenging.  As this thesis is concerned with a dark matter axion search, I will briefly review the techniques
 
