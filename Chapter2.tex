@@ -19,6 +19,61 @@ All in all, this makes the conversion rate go up as a factor of the cavity quali
 
 In this chapter, we describe the expected signal power for a photon transformed from the axion in the presence of a static magnetic field. This will depend on the cavity quality factor, the density of dark matter, and the volume of the cavity. As we will see, the cavity quality factor and volume both decrease with increasing resonance frequency, if the mode measured is the lowest mode of the cavity. Working at higher modes also brings in a cost, as the form factor which calculates the overlap of the cavity mode with the background magnetic field, decreases for higher modes.
 
+\section{Expression for Axion Power}
+
+o start from the theory, the axion-photon appears in the Lagrangian with an effective term as 
+\begin{align*}
+\mathcal{L} = \frac{1}{4}FF + \frac{1}{2}\partial_\mu a^2 -\frac{1}{2}m^2 a^2 + \frac{1}{4}gF\tilde F a
+\end{align*}
+
+where $F_{\mu\nu}$ is the electromagnetic field tensor, and $\tilde F_{\mu\nu}$ its dual; $F\tilde F = E \dot B$. This produces modified Maxwell's equations of the form \cite{hoogeveen92}:
+
+\begin{align*}
+\end{align*}
+\nabla \cdot B = 0 \
+\partial_t B + \nabla \times E = 0 \
+\nabla \dot E = -gB \dot \nabla a \
+\partial_t E - \nabla \times B = g B \partial_t a - g E \times \nabla a \
+(\partial_t^2 - \nabla^2 + m^2)a = gE\dot B \
+\end{align*}
+
+this leads to an equation of motion that, assuming a spatially uniform axion field (which in our case holds), looks like 
+
+\begin{align*}
+\nabla^2E - \partial_t^2E = gB_0\partial_t^2a
+\end{align*}
+
+where $B_0$ is the magnetic field. Decomposing the electric field in terms of the cavity modes, as well as the background magnetic field, and following the discussion in \cite{krauss85}, shows that the cavity will respond in mode j as 
+
+\begin{align*}
+\lambda_j(\omega) = \eta_j\[\omega^2/(\omega^2-\omega_j^2)\]a(\omega)
+\end{align*}
+
+where $\eta_j$ is the fourier coefficient (with basis of cavity modes j) for describing the background magnetic field, $a(\omega)$ is the Fourier representation of $a(t)$.
+
+Integrating over the parameter $\omega$, the energy stored in the cavity for a mode j is 
+
+\begin{align*}
+U_j = \int \abs{E_j(\omega,x)}^2 d^3x d\omega \
+= V \int \lambda_j^2 d\omega
+\end{align*}
+
+Including dissipation by the substitution $(\omega^2-\omega_j^2)^2 \rightarrow (\omega^2-\omega_j^2)^2 + \omega^4/Q^2$, and rewriting the $\\eta_j^2$ as $G^2B^2$ for some filling factor $G$, the energy in a mode is
+
+\begin{align*}
+U_j = G^2VB^2\int \abs{a(\omega)}^2 \omega^4/((\omega^2-\omega_j^2)^2 + \omega^4/Q^2) d\omega$
+\end{align*}
+
+On resonance, for $Q < Q_a$
+
+$P_j = \omega_j U_j/Q = G^2B^2VQ\rho/m_a$
+
+
+The axion Q is, assuming virialized axions, $\simto 10^6$.
+
+
+
+
 The signature
 \section{Dark Matter ALPs}
 
