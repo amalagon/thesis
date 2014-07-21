@@ -29,7 +29,6 @@ o start from the theory, the axion-photon appears in the Lagrangian with an effe
 where $F_{\mu\nu}$ is the electromagnetic field tensor, and $\tilde F_{\mu\nu}$ its dual; $F\tilde F = E \dot B$. This produces modified Maxwell's equations of the form \cite{hoogeveen92}:
 
 \begin{align*}
-\end{align*}
 \nabla \cdot B = 0 \
 \partial_t B + \nabla \times E = 0 \
 \nabla \dot E = -gB \dot \nabla a \
@@ -46,7 +45,7 @@ this leads to an equation of motion that, assuming a spatially uniform axion fie
 where $B_0$ is the magnetic field. Decomposing the electric field in terms of the cavity modes, as well as the background magnetic field, and following the discussion in \cite{krauss85}, shows that the cavity will respond in mode j as 
 
 \begin{align*}
-\lambda_j(\omega) = \eta_j\[\omega^2/(\omega^2-\omega_j^2)\]a(\omega)
+\lambda_j(\omega) = \eta_j(\omega^2/(\omega^2-\omega_j^2))a(\omega)
 \end{align*}
 
 where $\eta_j$ is the fourier coefficient (with basis of cavity modes j) for describing the background magnetic field, $a(\omega)$ is the Fourier representation of $a(t)$.
@@ -54,28 +53,36 @@ where $\eta_j$ is the fourier coefficient (with basis of cavity modes j) for des
 Integrating over the parameter $\omega$, the energy stored in the cavity for a mode j is 
 
 \begin{align*}
-U_j = \int \abs{E_j(\omega,x)}^2 d^3x d\omega \
+U_j = \int |{E_j(\omega,x)}|^2 d^3x d\omega \
 = V \int \lambda_j^2 d\omega
 \end{align*}
 
 Including dissipation by the substitution $(\omega^2-\omega_j^2)^2 \rightarrow (\omega^2-\omega_j^2)^2 + \omega^4/Q^2$, and rewriting the $\\eta_j^2$ as $G^2B^2$ for some filling factor $G$, the energy in a mode is
 
 \begin{align*}
-U_j = G^2VB^2\int \abs{a(\omega)}^2 \omega^4/((\omega^2-\omega_j^2)^2 + \omega^4/Q^2) d\omega$
+U_j = G^2VB^2\int |a(\omega)|^2 \omega^4/((\omega^2-\omega_j^2)^2 + \omega^4/Q^2) d\omega
 \end{align*}
 
 On resonance, for $Q < Q_a$
 
 $P_j = \omega_j U_j/Q = G^2B^2VQ\rho/m_a$
 
-
-The axion Q is, assuming virialized axions, $\simto 10^6$.
-
+[ALTERNATE EXPLANATION IN TERMS OF RLC CIRCUIT]
 
 
+The axion Q is, assuming virialized axions, $\sim 10^6$.
 
-The signature
-\section{Dark Matter ALPs}
+In terms of the laboratory parameters, the observable power in the $\text{ª}_{020}$ mode from an axion on resonance at 34 GHz with coupling $g_{a\gamma\gamma} = 8 \times 10^{-11}$ 1/GeV would be 
+
+\begin{multline*}
+P = 1.7 \times 10^{-24}\text{ W}\(\frac{C_{020}}{0.13}\)\(\frac{Q}{10^4}\) \\
+\(\frac{V}{1.6\text{ cm}^3}\) \\\(\frac{B_0}{7 T}\)^2 \\
+\(\frac{g_{a\gamma\gamma}}{8\times10^{-11}\text{ 1/GeV}}\)^2 \\
+\(\frac{\rho_a} {0.3\text{ GeV/}\text{cm}^3}\)\(\frac{m_a}{34\text{ GHz}^{-1}}
+\end{multline*}
+
+
+ \section{Dark Matter ALPs}
 
 There is strong astrophysical evidence that a large portion of the matter in our galaxy is non-luminous, meaning that it does not have electromagnetic interactions. The first evidence came from measurements by Oort \cite{oort32}, who showed that their must be more mass in the Milky Way than measured; at around the same time, Fritz Zwicky \cite{zwicky37} measured the mass to light ratio in the Coma cluster. He found that the MtoL ratio was nearly 500 times greater than that expected. Most definitively, measurements of spiral galaxies using hydrogen's hyperfine transition at 21 cm have shown that in a a survey of many glaxies, all of them have rotation curves that suggest that the matter is distributed in a diffuse halo, not concentrated near the center, as the light is\cite{rubin80}. This dark matter would affect structure formation; as pockets of local overdensity formed, non-relativistic dark matter would settle into the gravitational well and provide many sites of small structure, which could then accrete to form large structure later - this is consistent with the level of temperature anisotropies observed in the Cosmic Microwave background \cite{planck13}, and n-body simulations [NEEDSREF]. Observations of temperature anisotropies in the Cosmic Microwave Background also allow us to make predictions on cosomological parameters; $\kappa$, the geometry of the universe, and $\Omega$, the matter density. The measurement of the relative amplitude of the anisotropies tells us that the baryon density of the universe is 4$\%$. This rules out the simplest assumption that dark matter is baryonic and made of dead stars or non-luminous brown dwarfs. This was also ruled out by micro-lensing surveys of Massic Compact Halo Objects (MACHOS) [NEEDSREF], which did not find as many events as would be predicted by the abundance of dark matter. The measurements of supernova with respect to distance, using them as standard candles, tells us how much of the universe is made up on dark energy, a mysterious substance which is causing the expansion of the universe to accelerate. The amount of dark energy in the universe, taken from CMB measurements, is 73$\%$. The remaining 21$\%$ is dark matter.
 

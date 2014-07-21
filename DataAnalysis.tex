@@ -4,7 +4,7 @@
 \begin{document}
 \section{Analyzing the Data}
 
-Since we are interested in the fluctuations of the mean power density, we don't care about the actual structure of the spectra's mean that we measure, except that it verifies that we are indeed in the cavity resonance by seeing the cavity structure. In general we want to remove any structure to make sure we are not weighting variations towards one end of the channel more because of some structural offset. Actually that doesn't make any sense. I give up.
+Since we are interested in the fluctuations of the mean power density, we don't care about the actual structure of the spectra's mean that we measure, except that it verifies that we are indeed in the cavity resonance by seeing the cavity structure. In general we want to remove any structure to make sure we are not weighting variations towards one end of the channel more because of some structural offset. 
 
 What really makes sense we have fluctuations but must determine a mean somehow, and to do that we need to fit the curve. I have discussed above the equivalent circuit of the cavity or at least attempted to. The structure we observe is due to the electronics plus the response of the cavity. The reason we observe a dip in general seems to be because of the fact that the noise of the LNA is higher than the temperature of the cavity, so it acts as a source which is then reflected from the cavity input according to the reflection coefficient, which is a long winded way of saying the LNA noise from the front end is making an $S_{11}$ measurement for us.
 
@@ -42,7 +42,7 @@ We can compare it to the ADMX model.
 
 The background we are limited by are the fluctuations in thermal radiation. The variations are random, so we can model it as Gaussian so that the variations reduces as $1/\sqrt{N}$, where N is the number of averages. The fluctuations of the energy density in the range $\omega, \omega +d\omega$ vary as $kT$ so reducing the temperature reduces the fluctuations. Bandwidth is an important consideration - by reducing the spectrum of frequencies we capture, we can speed up our acquisition time, but we have a lower limit on our bandwidth placed by the constraint that anywhere the cavity resonates could potentially produce a signal (this is for the axion case). Therefore we must at least take in a spectrum with width $\delta f = f/Q$. As well, we need to be able to resolve structures on the scale of the expected axion bandwidth, which is expected to be some number based on considerations of velocity dispersion in the Earth. So we must have $\delta f/f_a$ channels, or bins, or $f_a$ must be our maximum resolution bandwidth. I say maximum, when I mean to say optimum.
 
-Although we said above that the fluctuations go down as the number of averages, what that means in terms of the bandwidths we discussed above is that for a total time of data acquisitiong $t$, the resolution bandwidth will be $1/t$, which we want to make equal to $f_a$. If we average over all m bins, where $m=\delta f/f_a$, then $m =\delta f t$. This makes no sense.
+%Although we said above that the fluctuations go down as the number of averages, what that means in terms of the bandwidths we discussed above is that for a total time of data acquisition $t$, the resolution bandwidth will be $1/t$, which we want to make equal to $f_a$. If we average over all m bins, where $m=\delta f/f_a$, then $m =\delta f t$. This makes no sense.
 
 The fluctuation in a given channel will go down as the square root of the number of measurements made that are averaged together. If there are $N$ measurements constituting a total time $t=Nt_m$, where the time of each measurement gives a resolution bandwidth by the uncertainty principle of $t_m=1/f_a$, then $t=N/f_a$ and $N=tf_a$. So the fluctuation in our channel will go down as $1/\sqrt{t f_a}$. This is known as the Dicke radiometer equation and was put forward to clarify issues in reducing noise for radioastronomy, where people where looking at noise-like traces and trying to reduce their fluctuation. Although here we are limited to a maximum bandwidth of $f_a$ if we want to resolve our axion-bandwidth, in general for reducing noise, a larger bandwidth is desirable to reduce the variations more quickly.
 
@@ -130,7 +130,7 @@ Therefore we must take the worst case limit where the axion is between two bins 
 
 \section{Maxwell Tail}
 
-We must also account for the fact that the Maxwell tail is not in the same bin as the peak, so we lose 20% of the power that way.
+We must also account for the fact that the Maxwell tail is not in the same bin as the peak, so we lose 20$\%$ of the power that way.
 
 PICTURE OF A BOOSTED MAXWELLIAN
 \begin{figure}
@@ -158,12 +158,6 @@ The Fourier Transform of the data is accomplished using the FFTW libraries which
 When averaging we take the power density spectra and average these. There is some trickiness to averaging the linear scale and then converting to logarithmic or taking the average of logarithmic traces. I can't remember what that is.
 
 
-\subsection{Minuit}
-
-MINUIT is a code that can fit fifth order polynomials according to Michael Hotz. Do they need initial parameters? I don't know.
-
-The noise wave model can also be done using a current and voltage noise source. Maybe I will try this instead, don't really see the advantage or reason of doing the noise wave model.
-
 
 \section{Windowing}
 
@@ -179,7 +173,7 @@ The data analysis starts from the raw time traces. The receiver chain at the fin
 
 \section{DATA ANALYSIS PART 1}
 
-Starting with the raw time traces of the I and Q channel, each 37.5 GB in length, we perform a discrete Fourier transform on each using the FFTW Software library implemented in C. The two FFTs are squared and summed to yield a periodogram - the power FFT. The reason we have the FFT on both the I and Q channel is to be able to distinguish the positive frequencies from the negative frequncies, which would be impossible if we had mixed down to DC without the I and Q separation.
+Starting with the raw time traces of the I and Q channel, each 37.5 GB in length, we perform a discrete Fourier transform on each using the FFTW Software library implemented in C. The two FFTs are squared and summed to yield a periodogram - the power FFT. The reason we have the FFT on both the I and Q channel is to be able to distinguish the positive frequencies from the negative frequencies, which would be impossible if we had mixed down to DC without the I and Q separation.
 
 Once we have the FFT, which is performed for a fixed number of points (in our case 294 - set by what we think the axion bandwidth is and our sampling rate) we then continue to perform FFTs on the time trace data and average the resulting FFTs together. There is no overlap done. There is also no window, or to rephrase, a square window on the data.
 
@@ -259,7 +253,7 @@ $\sigma$ in units of output power - translates to 12.9 K input temperature.
 
 \section{DATA STREAM}
 
-In our data taking we stepped with stepsize 3 MHz. The bandwidth of the cavity was on average 4 MHz so there is 1 MHz of overlap between consecutive datasets. To calculate the SNR for an individual dataset, we need to know where the cavity was to calculate the expected axion power for bins detuned for the resonance, we need to know several state parameters such as the Q and form factor, and we of course need to know the noise. This will give us a SNR for an individual dataset. We then need to be able to combine the SNR’s for bins from different datasets with near identical frequencies to be able to say something about the combined dataset. SNR’s add in quadrature - we also need to make a weighted mean to get the weighted noise. The weighting factors for each bin were calculated to be $\sqrt{S/N^2}$ by Ed Daw in his thesis that maximize the noise - this is what we use here as well.
+In our data taking we stepped with stepsize 3 MHz. The bandwidth of the cavity was on average 4 MHz so there is 1 MHz of overlap between consecutive datasets. To calculate the SNR for an individual dataset, we need to know where the cavity was to calculate the expected axion power for bins detuned for the resonance, we need to know several state parameters such as the Q and form factor, and we of course need to know the noise. This will give us a SNR for an individual dataset. We then need to be able to combine the SNR� as for bins from different datasets with near identical frequencies to be able to say something about the combined dataset. SNRs add in quadrature - we also need to make a weighted mean to get the weighted noise. The weighting factors for each bin were calculated to be $\sqrt{S/N^2}$ by Ed Daw in his thesis that maximize the noise - this is what we use here as well.
 
 So we take the data in for each FFT saved to file, which is actually the average of 5e5 spectra, and assign a skeleton array to hold in column 1 all the frequencies that were covered in our runs, in column 2 all the power values (if there is not already a power value there), in column 3 the noise (initially set to the standard error of the spectrum), in column 4, the $\text{weight}=1/\text{std.err}^2$, in coulumn 5 the factor by which the axion power is suppressed off resonance $h[x] = 1/(1+4\Delta^2/\Gamma^2)$, and in column 6 the expected axion power Pi, and in column 7 the resultant SNR. If there is already a dataset value assigned to a particular frequency bin, when a new dataset is processed we combine the datasets by doing the weighted means, setting column 3 equal to.
 

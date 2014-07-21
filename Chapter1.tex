@@ -23,19 +23,19 @@ WIMPs have historically attracted the most attention as dark matter candidates; 
 
 The neutrino was originally considered to be a good dark matter candidate; however neutrinos constitute "hot dark matter", meaning that their speeds in the early history of the universe were such that they were relativistic. This would affect the history of structure formation, causing large structures to form and then smaller structures later on. This contradicts much of the evidence we have, which shows that small structures such as white dwarfs are billions of years old, while galaxy clusters are much younger, millions of year old. Thus the neutrino is not a good cold dark matter candidate (cold dark matter would favor this ``bottom-up" structure formation". However, what is known as the sterile neutrino could be a "cold" or "warm" dark matter candidate, depending on its production mechanism. Sterile neutrinos are right-handed neutrinos, so they do not participate in the weak interaction, and their only coupling would be to left-handed neutrinos. Their existence is predicted by the see-saw mechanism, which describes how neutrinos gain mass. There is some tentative evidence for a 3.5 or 7 keV sterile neutrino pair annihilating into X-rays in nearby galaxies \cite{bulbul14}, \cite{boyarsky14}; however it remains to be confirmed in direct experiments and the evidence is highly uncertain at the time of writing.
 
-Finally, axion-like particles are also strongly motivated dark matter candidates. These would be light ($< 1$ meV) pseudoscalar particles with a generic coupling to two photons. The canonical axion arises from a consideration of symmetry violations in the theory of strong interactions, or quantum chromodynamics (QCD), as will be described later in the chapter.Axion-like particles (ALPs) are light bosons that have similar interactions and properties as the axion, but do not arise from the same theory of symmetry violations with QCD specifically. Axion-like particles appear in string theory [NEEDSREF], grand unified theories [NEEDSREF], and more. As the light degrees of freedom of new symmetries broken at high energies, they provide a probe of physics at extremely high energy scales and at times early in the history of the universe. Moreover, evidence for the canonical axion would answer the question of symmetry violation in QCD.
+Finally, axion-like particles are also strongly motivated dark matter candidates. These would be light ($< 1$ meV) pseudoscalar particles with a generic coupling to two photons. The canonical axion arises from a consideration of symmetry violations in the theory of strong interactions, or quantum chromodynamics (QCD), as will be described later in the chapter.Axion-like particles (ALPs) are light bosons that have similar interactions and properties as the axion, but do not arise from the same theory of symmetry violations with QCD specifically. Axion-like particles appear in string theory \cite{svrcek06}, grand unified theories [NEEDSREF], and more. As the light degrees of freedom of new symmetries broken at high energies, they provide a probe of physics at extremely high energy scales and at times early in the history of the universe. Moreover, evidence for the canonical axion would answer the question of symmetry violation in QCD.
 
 At present there is no clear evidence for any of these particles, thus it is worthwhile investigating all dark matter candidates. Moreover, dark matter could be formed from any or all of these particles. This work focuses on a dark matter axion-like particle search.  The search done as part of the Yale Microwave Cavity Experiment (YMCE) looked for dark matter pseudoscalars that couple to two photons, also known axion-like particles (ALPs). This project is part of YMCE's work in constraining exotic particles in the 140 $\mu$eV mass region using cryogenically cooled microwave cavities, with previous projects being a search for dark matter scalars, and one looking for photon regeneration due to hidden photons. This mass region is so far unexplored by other microwave cavity experiments, as it is more challenging to reach the sensitivities needed to detect the canonical axion.
 
 This thesis describes the dark matter search; the design of the cavity, operation of the experiment, and measurements taken. The remainder of this chapter discusses the motivation for axion (and ALP) dark matter in more detail. Chapter 2 describes the technique of using microwave cavities, while Chapter 3 provides some background on astrophysics and cosmology necessary for understanding the current parameter space. Chapter 4 describes the experiment, while Chapters 5, 6, and 7 focus on the microwave cavity design and data analysis, which I worked on. This includes simulations of the cavity coupling and its form factor, tuning, and Q response at cryogenic temperatures (Chapter 5), the construction of a data analysis pipeline and determining an exclusion limit (Chapter 6), and work on the hardware automation for the experiment (Chapter 7).
 
-\section{Motivation for ALP dark matter}
+\section{Motivation for ALPs}
 
 We briefly review motivations for the axion and axion-like particles (ALPs) as a dark matter candidate. For a more comprehensive discussion see \cite{hewett12}, \cite{arias12}, and \cite{kim87}. 
 
 \subsection{strong CP problem}
 
-The motivation for axions, or QCD axions, is very strong. The axion arises from a mechanism introduced to explain the puzzling fact that parity and time violation are not observed in the theory of strong interactions, Quantum Chromodynamics (QCD). This is odd, as there is a term in the QCD Lagrangian that is explicitly P- and T- violating:
+The motivation for the canonical axion, or QCD axion, arises from an attempt to explain what is known as the \it{strong CP problem}. CP symmetry, or charge parity symmetry, refers to the symmetry of physical equations under reversal of spatial reflection and charge conjugation.  When CP violation occurs,  it is manifested as a visible distinction between particles and antiparticles \cite{gottfried86}. The weak interaction violates CP symmetry, as observed in neutral kaon systems \cie{christenson64}, however there is no evidence for strong interaction processes which violate CP. This is odd, as there is a term in the QCD Lagrangian that is explicitly P- and T- violating:
 
 \begin{align*}
 \mathcal{L} = \bar \theta g^2 G \tilde G
@@ -46,7 +46,7 @@ E \rightarrow E$ and $B \rightarrow -B$.  Therefore the product $E\dot B$ is not
 
 \footnote{We note that the reason the equivalent CP violating term in QED does not arise $F\tilde F$ is because it is a total four-divergence. This means, for fields that are vanishing small as you approach spatial infinity, that the term goes to zero when integrating the Lagrangian. Because the gluon fields are self-interacting (you can equivalently say QCD is non-abelian) the term $G \tilde G$ is not zero as you go to infinity, and so the four divergence has a finite effect.}
 
- From this CP violating term we should see a neutron electric dipole moment [NEEDSREF] [NEEDSPIC]. However measurements of the neutron EDM have been consistent with zero, placing an upper boud on $\bar \theta < 10^{-10}$.
+This CP violating term should induce observable effects, such as a permanent neutron electric dipole moment [NEEDSREF] [NEEDSPIC]. However measurements of the neutron EDM have been consistent with zero, placing an upper boud on $\bar \theta < 10^{-10}$.
 
 Although there is a free parameter, $\bar \theta$ in this P, T (or CP- if you believe in the CPT Theorem) violating term that can be set to zero, this constitutes a fine tuning problem as the observable $\bar \theta$ is the sum of two independent terms from two different sectors, which should not a priori cancel each other.
 
@@ -54,13 +54,31 @@ Although there is a free parameter, $\bar \theta$ in this P, T (or CP- if you be
 \bar \theta = \theta + \text{arg det} \mathcal{M}
 \end{align*}
 
-The physical meaning of these terms is that $\theta$ is the density of instantons. Instantons are tunneling events that occur being different QCD vacua. We know that QCD has a non-trivial vacua because the introduction of such a vacua solves the $U(1)_A$ problem, which is the question of why the $\eta'$ is not degenerate with the pion mass \cite{thooft76}. The problem is a question of symmetry breaking - [NEEDSEXPLANATION]. $\mathcal{M}$ is the quark mass matrix: $\text{arg det} \mathcal{M} = m_um_dm_s$ the product of the quark masses when real. If there is a massless quark, the value above is undefined and $\bar \theta$ is also undefined. However, we believe there is evidence that the lightest quark, the up, is not massless and has mass between 0.3-0.7 MeV [NEEDSREF].
+[THISISAHORRIBLEPARAGRAPHFIXIT]
+The physical meaning of these terms is that $\theta$ is the density of instantons. Instantons are tunneling events that occur between different QCD vacua. We know that QCD has a non-trivial vacua because the introduction of such a vacua solves the $U(1)_A$ problem, which is the question of why the $\eta'$ is not degenerate with the pion mass \cite{thooft76}. The problem is a question of symmetry breaking - [NEEDSEXPLANATION]. $\mathcal{M}$ is the quark mass matrix: $\text{arg det} \mathcal{M} = m_um_dm_s$ the product of the quark masses when real. If there is a massless quark, the value above is undefined and $\bar \theta$ is also undefined. However, we believe there is evidence that the lightest quark, the up, is not massless and has mass between 0.3-0.7 MeV [NEEDSREF].
 
- This "strong CP problem", or the fine tuning problem of why $\bar \theta$ is less than a billionth of a radian when there is no reason to believe it should be so small, can be solved by introducing a new global, chiral symmetry, as proposed by Peccei and Quinn in 1977 \cite{peccei77}. The spontaneous breaking of this symmetry at some energy scale $f_a$ (that the symmetry must be broken is due to the non-vanishing quark masses) introduces the axion as the resulting massless Goldstone boson. Due to a chiral anomaly with QCD, or to rephrase due to instanton effects, the axion experiences a potential, which causes it to acquire a mass proportional to the energy scale of QCD, $\Lambda_{QCD}$ and inversely proportional to the energy scale of the symmetry breaking $f_a$ \cite{weinberg78}, \cite{wilczek78}. The role of anomalies is widespread in physics; a chiral anomaly with electromagnetic fields solves the U(1) problem, which is the question of why the $\eta'$ is not degenerate with the pion mass. It is due to anomalies that this occurs. For more comprehensive treatment of anomalies, see \cite{bardeen07}. The axion coupling constant to matter ends up also being inversely proportional to $f_a$, so the mass and coupling constant of the axion are directly proportional. The axion coupling to gluons implies a generic coupling to photons, through mixing with the pion; although there is some model dependence for the coupling and it can be set to zero, this represents another fine tuning problem.
+ The fine tuning problem, or strong-CP problem, of why $\bar \theta$ is less than a billionth of a radian when there is no reason to believe it should be so small, can be solved by introducing a new global, chiral symmetry, as proposed by Peccei and Quinn in 1977 \cite{peccei77}. The spontaneous breaking of this symmetry at some energy scale $f_a$ (that the symmetry must be broken is due to the non-vanishing quark masses) introduces the axion as the resulting massless Goldstone boson. Due to a chiral anomaly with QCD, or to rephrase due to instanton effects, the axion experiences a potential, which causes it to acquire a mass proportional to the energy scale of QCD, $\Lambda_{QCD}$ and inversely proportional to the energy scale of the symmetry breaking $f_a$ \cite{weinberg78}, \cite{wilczek78}. The role of anomalies is widespread in physics; a chiral anomaly with electromagnetic fields solves the $U(1)_A$ problem, which is the question of why the $\eta'$ is not degenerate with the pion mass. It is due to anomalies that this occurs. For more comprehensive treatment of anomalies, see \cite{bardeen07}, \cite{peskin95}. The axion coupling constant to matter ends up also being inversely proportional to $f_a$, so the mass and coupling constant of the axion are directly proportional. The axion coupling to gluons implies a generic coupling to photons, through mixing with the pion; although there is some model dependence for the coupling and it can be set to zero, this represents another fine tuning problem.
 
 [NEEDSPIC] of axion to gluon coupling, axion to pion coupling
 
-The term axion-like particles (ALPs) describes bosons that, like the axion, acquire a mass through some explicit symmetry breaking of a new symmetry, although not necessarily due to an anomalous interaction with QCD. Familons and majorons are two such examples of ALPs \cite{kim87}, but they arise generically in string theories  and extensions to the standard model,\cite{masso06}, \cite{hewett12}, \cite{arias12} as the mechanism of an additional U(1) symmetry is a minimal extension, and anomalies must often take place to cancel divergences. For ALPs, the coupling and mass are no longer necessarily connected, so there are two free parameters to their theory. However, the idea of a light, spinless, neutral, chargeless boson is common for both axions and ALPs.
+The term axion-like particles (ALPs) describes bosons that, like the axion, acquire a mass through some explicit symmetry breaking of a new symmetry, although not necessarily due to an anomalous interaction with QCD. Familons and majorons are two such examples of ALPs \cite{kim87}, but they arise generically in string theories  and extensions to the standard model,\cite{masso06}, \cite{hewett12}, \cite{arias12} as the mechanism of an additional U(1) symmetry is a minimal extension, and anomalies must often take place to cancel divergences. For ALPs, the coupling and mass are no longer necessarily connected, so there are two free parameters to their theory. However, the idea of a light, spinless, neutral, chargeless boson is common to both axions and ALPs.
+
+\section{How axions are produced as dark matter}
+
+So far we have explained how axions in particular can be produced as the result of a new symmetry having an anomaly with QCD. Now let us consider what happens during the evolution of the axion. The potential that the axion feels is a function both of $\theta$ and T, the temperature. 
+
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{vthetavstheta}
+\end{figure}
+
+
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{axionpotential}
+\caption{From \cite{kim95}; shows how slight the axion potential is.}
+\end{figure}
+
+Imagine this potential being stretched out in space, as is happening through the expansion of the universe. When the expansion slows down sufficiently so that $H \sim m_a$, the axion begins to oscillate. Because the lifetime of the axion is longer than the age of the universe, the oscillations do not die out, but the amplitude of the oscillations is decreased by the expansion of the universe. Discussion taken from Kim's "Axionic Extensions of the Standard Model".
+
 
 \subsection{Models of the axion}
 
@@ -173,21 +191,6 @@ This hides the fact that there is a triangle loop causing a Yukawa coupling betw
 
 The gluons can create quark-anti-quark pairs, with the pion being the lightest example. One can think of this axion-pion mixing as the effect that generates the axion mass. The pions can then decay into two photons via the Primakoff effect, which itself has a triangle loop anomaly, and this is how the axion interacts with two photons.
 
-\section{How axions are produced as dark matter}
-
-So far we have explained how axions in particular can be produced as the result of a new symmetry having an anomaly with QCD. Now let us consider what happens during the evolution of the axion. The potential that the axion feels is a function both of $\theta$ and T, the temperature. 
-
-\begin{figure}
-\includegraphics[width=0.6\textwidth]{vthetavstheta}
-\end{figure}
-
-
-\begin{figure}
-\includegraphics[width=0.6\textwidth]{axionpotential}
-\caption{From \cite{kim95}; shows how slight the axion potential is.}
-\end{figure}
-
-Imagine this potential being stretched out in space, as is happening through the expansion of the universe. When the expansion slows down sufficiently so that $H \sim m_a$, the axion begins to oscillate. Because the lifetime of the axion is longer than the age of the universe, the oscillations do not die out, but the amplitude of the oscillations is decreased by the expansion of the universe. Discussion taken from Kim's "Axionic Extensions of the Standard Model".
 
 \section{Supernova Limit}
 
@@ -198,11 +201,10 @@ The work in this thesis describes a search for dark matter axion-like particles,
 
 
 
-While I will go into more detail about each of the candidates later, axions in particular also solve a problem in particle physics related to symmetry violations. 
 
 
-
-
+\section{OLD TEXT}
+\subsection{Another version of Ch1}
 At this point, it is firmly established that a large portion of the matter in the universe is non-luminous. Through astrophysical observations, we can estimate that the mass to light ratio in spiral galaxies is much higher than we would expect from the amount of luminous matter alone [NEEDSREF]. The existence of this gravitationally interacting matter influences the rate of structure formation in the early universe, and measurements of the cosmic microwave background can state that the observations are consistent with a $\Lambda$CDM model; that is, a model of the universe as composed of non-baryonic, non-relativistic matter [NEEDSREF]. We know very little more about this dark matter other than the conclusions stated above.
 
 At the same time, the nature of physics at high energy (> TeV) scales is unknown. The equations that make up the Standard Model do not extend into this energy range, and current experiments that can produce physics at high energies (the LHC, other colliders) will be limited by the size of the experiments to explore energies of at most 10 TeV. Ther are many theories of physics at high energy scales; all of these predict new particles at higher energies, or additional symmetries. The high-energy particles or new effects at high energies can enter as small corrections in loop diagrams, leading to small corrections in low-energy observables. The electric dipole moment is one such observable that can be measured in laboratories but whose value is sensitive to high energy physics. The most recent measurement of the electric dipole moment of the electron \cite{acme14} done by the ACME experiment has seen a result consistent with zero, ruling out parameters of 100 TeV theories such as Supersymmetric models. These Supersymmetric (SUSY) theories are high energy theories that solve problems in high energy particle physics, and also predict a stable particle that is a very good candidate for the particle of cold dark matter.
