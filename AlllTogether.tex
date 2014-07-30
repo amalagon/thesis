@@ -1,6 +1,8 @@
-\documentclass[12pt]{book}
+\documentclass[12pt]{mythesis}
+% if you use draft as option the figures don't show up.
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage[toc,page]{appendix}
 \usepackage[compact]{titlesec}
 \usepackage{color}
 \usepackage{setspace}
@@ -12,13 +14,27 @@
 \doublespacing
 
 \begin{document}
+\title{Search for 140 $\mu$eV Axion-Like Particle Dark Matter Using Microwave Cavities}
+\author{Ana T. Malagon}
+\advisorline{Dissertation Advisor: O. Keith Baker}
+\date{}
 
-\chapter{Abstract}
+\frontmatter
+
+\begin{abstract}
 One of the most basic open questions in physics today concerns the nature of dark matter. There exists strong observational evidence for the existence of dark matter, yet we still know little about its composition, despite the fact that it composes $26.8\%$ of our universe. One leading candidate for dark matter are new light pseudoscalars called axion-like particles (ALPs). Searches for ALPs have been experimentally challenging, as they couple very feebly to ordinary matter.  Experimental techniques to detect dark matter ALPs  rely on a multiphoton radiative transition; in the presence of a strong magnetic field ALPs can convert to photons. If a microwave cavity is placed in the interaction region, when the produced photon's frequency is resonant with a mode of the cavity, the signal power is enhanced further. This method has been applied successfully to constrain the ALP coupling to photons for masses near 1 $\mu$eV, with plans to search up to 10 $\mu$eV. However, prior to this work, the microwave cavity method had not been applied to look for ALPs of higher mass, in the 0.1 to 1 meV range. It is important to search for axions in this mass range in order to cover all possible parameter space, as the axion mass is constrained to lie roughly between 1 $\mu$eV to 1 meV. We present here the first microwave cavity search for dark matter ALPs with mass $\sim 140 \mu$eV. In our experiment we cryogenically cooled a cavity and measured the power in the cavity $\text{ª}_{020}$ mode in a 7 Tesla background magnetic field. Cryogenic HEMT amplifiers and a low noise receiver chain allowed us to run with a system noise temperature of approximately 20 Kelvin. We ran for four months and swept the microwave cavity resonant frequency from 33.9 to 34.5 GHz, corresponding to an axion mass range of 140.2  to 142.7 $\mu$eV. Non-observation of statistically significant signals led to an upper bound on the ALP to two photon coupling of $g_{a\gamma\gamma} < 8.6 \times10^{-11}$ 1/GeV, marginally improving on the previous best limit obtained from the CAST experiment. With the same data set we were also able to set new limits on ``hidden photon" couplings if these hidden photons are responsible for dark matter, where hidden photons refers to massive vector bosons that couple only with Standard Model photons. As with the first generation of microwave cavity experiments that searched for ALPs in the lower mass region, there are several technical challenges that must be overcome in order to reach the sensitivity to observe or exclude canonical axion models. However, as we do not know the ALP mass a priori, it is valuable to develop experiments and techniques to search for them in their entire possible mass range. If observed, axion (and ALP) dark matter would not only be an important advance in our knowledge of dark matter but also give us clues about processes at high energy scales inaccessible by collider experiments.
+\end{abstract}
+\maketitle
+\makecopyright{2014}
 
 \tableofcontents
+\listoffigures
+\listoftables
 \chapter{Acknowledgments}
+\thispagestyle{empty}
+\clearpage
 
+\mainmatter
 \chapter{Introduction}
 %At this point, it is firmly established that a large portion of the matter in the universe is non-luminous. Through astrophysical observations, we can estimate that the mass to light ratio in spiral galaxies is much higher than we would expect from the amount of luminous matter alone [NEEDSREF]. The existence of this gravitationally interacting matter influences the rate of structure formation in the early universe, and measurements of the cosmic microwave background can state that the observations are consistent with a $\Lambda$CDM model; that is, a model of the universe as composed of non-baryonic, non-relativistic matter [NEEDSREF]. We know very little more about this dark matter other than the conclusions stated above.
 One of the most basic open questions in physics today concerns the nature of dark matter. Strong observational evidence was first presented for the existence of non-luminous, gravitationally interacting matter by Zwicky in 1937 \cite{zwicky37}, who showed that the mass to light ratiosince then the existence of matter that does not interact electromagnetically has been confirmed in other astrophysical observations, with evidence of a diffuse dark matter halo from observations of the rotation curves of spiral galaxies \cite{rubin80}, and precision measurements of the Cosmic Microwave Background that measure the dark matter density in our universe to be 26.8$\%$ \cite{planck13}. However, to date we know little more than the fact that this dark matter is most likely a stable, neutral particle that is non-relativistic (or cold) and non-baryonic
@@ -138,7 +154,11 @@ E \rightarrow E$ and $B \rightarrow -B$.  Therefore the product $E\dot B$ is not
 
 We note that the reason the equivalent CP violating term in QED does not arise ($F\tilde F$) is because it is a total four-divergence. This means, for fields that are vanishing small as you approach spatial infinity, that the term goes to zero when integrating the Lagrangian. Because the gluon fields are self-interacting the term $G \tilde G$ is not zero as you go to infinity, and so the four divergence has a finite effect.
 
-This CP violating term should induce observable effects, such as a permanent neutron electric dipole moment \cite{baluni79}. An observation of a permanent electric dipole moment for any particle would be a major achievement, as no particle has yet been observed to have such a permanent electric dipole moment, although all fermions have magnetic dipole moments. However measurements of the neutron EDM $d_n$place upper bounds  at the level $d_n < 2.9 \times10^{-26}$ e$\cdot$cm\cite{baker06}, placing an upper bound on the QCD phase of $\bar \theta < 10^{-10}$ .
+This CP violating term should induce observable effects, such as a permanent neutron electric dipole moment of order
+\begin{align}
+|d_n| ~ \frac{e}{m_n}\big(\frac{m_u}{m_n}\big)|\bar \theta| \sim 10^{-16} |\bar \theta | \text{ e}\cdot\text{cm}
+\end{align}
+An observation of a permanent electric dipole moment for any particle would be a major achievement, as no particle has yet been observed to have such a permanent electric dipole moment, although all fermions have magnetic dipole moments. However measurements of the neutron EDM $d_n$place upper bounds  at the level $d_n < 2.9 \times10^{-26}$ e$\cdot$cm\cite{baker06}, placing an upper bound on the QCD phase of $\bar \theta < 10^{-10}$ .
 
 The P, T violating phase $\bar \theta$ can be set to zero, however this constitutes a fine tuning problem as $\bar \theta$ is the sum of two independent terms from two different sectors, which should be independent:
 \begin{align}
@@ -376,18 +396,21 @@ In this basis the heavy photon couples to the electromagnetic current with the c
 
 \chapter{Parameter Space}
 
-QCD axions have mass and couplings to matter proportional to the energy scale $f_a$, so the mass and coupling are proportional to each other. In more general scenarios of axion-like particles that are not generated due to interactions with QCD, the mass and coupling are taken as independent parameters. This leaves a 2D parameter space of possibilities. However, astrophysical arguments have been crucial in constraining the possible parameter space for ALPs.
+QCD axions have mass $m_a$ and couplings$g_a$ both inversely proportional to the energy scale $f_a$, so $m_a \propto g_a$. This relation is relaxed in more general models of axion-like particles, so $m_a$ and $g_a$ are taken as independent parameters. This leaves a two-dimensional parameter space for the axion. Astrophysical and cosmological provide stringent upper bounds on the axion mass and coupling. Cosmolgical considerations can set lower bounds on the axion mass, although these are subject to debate. Although axions arise from high energy processes, they appear as low energy observables, and there are a wide range of dedicated experimental searches looking for signatures of these axions. The majority of these experiments use the Primakoff effect, which we describe in Section \ref{sec:Prim}. The current bounds on the axion are reviewed in Section \ref{sec:CurrBounds}. Section \ref{sec:Detect} discusses the current experimental strategies, focusing on the haloscope technique.
+%Astrophysical data constrains a fair portion of the possible phase space; giving an upper bound on the axion mass of approximately 1 meV and an upper bound on the axion to photon coupling of $10^{-10}$ 1/GeV. In addition cosmological constraints 
+%
+% Experiments that attempt to detect axions using the Primakoff effect which primarily use the axion to two photon vertex, as it is relatively straightforward to produce intense electromagnetic fields in the laboratory. Searches assuming that the ALP is the dark matter are only using microwave cavities as resonant detectors \cite{admx10} although a Rydberg atom detection experiment was performed \cite{yamamoto00}. These experiments depend on the dark matter density at Earth. There are also new ideas involving the axion as inducing an oscillating electron dipole moment in nucleons \cite{budker13}, which will be sensitive to  ALPs of a different mass than those in the microwave cavity experiments. There are other experiments looking for axion-like particles, although they do not use dark matter as the source of the WISPs. These involve looking for axions produced in the sun (CAST) \cite{cast11} or directly producing axions from the two photon vertex using a laser and strong magnetic field (ALPS-I, ALPS-II) \cite{ehret10}. The direct production or light-shining-through-wall experiments has the least number of assumptions, but these experiments (solar, microwave cavity, lsw) together form a complementary way of searching for ALPs with the two-photon vertex.
+\section{Primakoff Effect}\label{sec:Prim}
 
-\section{Primakoff Effect}
-
-Most experimental searches for axion-like particles use the Primakoff effect \cite{primakoff51}, which converts the axion to a photon in the presence of a strong magnetic field. The interaction arises from the axion to gluon coupling:
+Most experimental searches for axion-like particles use the Primakoff effect \cite{primakoff51}, where the axion converts to a photon in a strong magnetic field. The interaction arises from the axion to gluon coupling:
 %
 %We previously introduced the Primakoff effect [section 4.3]; this is the $a\gamma \rightarrow \gamma$ interaction that most axion experiments use and that is capitalized on in this work. 
 \begin{align}
 \mathcal{L} = \bar \theta g^2 G \tilde G = \frac{a}{f_a} g^2 G \tilde G
 \end{align}
-
 where $G$ is the color field tensor, $g$ is the coupling, and $\tilde G$ is the dual field tensor. This interaction, shown in Figure~\ref{fig:pionmixing}, is the result of the anomalous symmetry breaking with QCD - the triangle loop diagram shown in Figure~\ref{fig:triangleloop} shows the Yukawa coupling between the axion and the intermediate fermion which couples to the gluons. Either this fermion is a heavy quark (as in the KSVZ) model, or an ordinary fermion which carries PQ charge.
+
+The gluons can create quark-anti-quark pairs, with the pion being the lightest example. One can think of this axion-pion mixing as the effect that generates the axion mass. The pions can then decay into two photons via the Primakoff effect, which itself has a triangle loop anomaly, and this is how the axion interacts with two photons.
 
 \begin{figure}[htbp]
 \begin{subfigure}{0.95\textwidth}
@@ -404,17 +427,13 @@ where $G$ is the color field tensor, $g$ is the coupling, and $\tilde G$ is the 
 \end{subfigure}
 \caption{Feynman Diagrams of axion-gluon and axion-pion interactions; from \cite{vogel09}}
 \end{figure}
-
-The gluons can create quark-anti-quark pairs, with the pion being the lightest example. One can think of this axion-pion mixing as the effect that generates the axion mass. The pions can then decay into two photons via the Primakoff effect, which itself has a triangle loop anomaly, and this is how the axion interacts with two photons.
-
-\section{Current Bounds on Axion-Photon Coupling }
+\section{Current Bounds on Axion-Photon Coupling }\label{sec:CurrBounds}
 %[ADD HIDDEN PHOTON BOUNDS]
-This section discusses the constraints on the axion to two photon coupling and axion mass. Astrophysical observations provide stringent upper bounds on the axion coupling and mass; if axions are the dark matter, then cosmological arguments can provide a lower bound on the axion mass, although this bound does not hold if the Peccei Quinn symmetry breaking occurs before inflation. We also discuss laboratory searches, which look for axion to photon conversion using either intense photon sources, such as the sun or lasers,  or intense axion sources, such as the galactic halo, assuming axions form the dark matter of the universe. This thesis searches for dark matter axions from the galactic halo using microwave cavities.
+This section discusses the constraints on the axion to two photon coupling $g_a{\gamma\gamma}$ and axion mass $m_a$. Astrophysical observations provide stringent upper bounds on the axion coupling and mass; if axions are the dark matter, then cosmological arguments can provide a lower bound on the axion mass, although this bound does not hold if the Peccei Quinn symmetry breaking occurs before inflation. We also discuss laboratory searches, which look for axion to photon conversion using either intense photon sources, such as the sun or lasers,  or intense axion sources, such as the galactic halo, assuming axions form the dark matter of the universe. This thesis searches for dark matter axions from the galactic halo using microwave cavities.
 
 \subsection{Astrophysical Constraints}
 
-Various astrophysical limits basically require symmetry breaking scale $f_a > 10^{10}$ GeV, hence the axion is a very light boson. Most of these limits come from the fact that the axion can carry away energy from stars and would cool them too quickly.
-
+%Various astrophysical limits basically require symmetry breaking scale $f_a > 10^{10}$ GeV, hence the axion is a very light boson. Most of these limits come from the fact that the axion can carry away energy from stars and would cool them too quickly.
 The evolution of stars is limited by the rate at which they dissipate the energy created in fusion. This rate is set by the opacity of the stars; for many stars it takes $10^8$ years for photons produced in the core to escape from the star. If feebly interacting particles such as the axion are produced in the star, they will freely stream out and thus radiate away more energy, accelerating stellar evolution and shortening the star's lifetime.
 
 By observing the statistical distribution of stars in globular clusters, we can infer the lifetimes of stars. They are consistent with our models of stellar lifetimes (without axions), so we can set a limit on the strength of axion coupling to matter by saying that the total energy loss (if there were axions) must be within the uncertainty of the observation. For different stars, different production mechanisms are dominant; in white dwarfs, nucleon bremmstrahlung predominates; in red giants, it is Compton-like processes \cite{raffelt08}.
@@ -425,8 +444,12 @@ Another limit comes from the supernova SN1987A. Neutrinos provide the dominant s
 
 Astrophysical arguments can constrain the axion mass severely. The requirement is that axions, which can produced in the cores of stars and act as an additional energy loss channel, have couplings lower than those which would produce a conflict with observation. The limits on the coupling strength to photons for globular clusters and the limit on the coupling strength to nucleons in the case of supernova SN1987A can be translated into limits on the axion mass of $m_a \leq 10^{-2} \text{eV}$ or $f_a \geq 10^9\text{GeV}$ \cite{raffelt08}.
 
-Hidden Photons
-
+\textbf{Hidden Photons}
+\begin{figure}[htbp]
+\includegraphics[width=\textwidth]{hiddenphotonexclusion}
+\caption{Hidden Photon parameter space and bounds. In red are the allowed regions for hidden photon dark matter. From \cite{arias12}}
+\label{fig:hpsumplot}
+\end{figure}
 
 %\section{Isocurvature Perturbations}
 %Quantum fluctuations generated in the ALP field during inflation will produce inhomogeneities in $\phi_0$. As the field is essentially massless, this corresponds to isocurvature perturbations of the gravitational potential.
@@ -452,12 +475,15 @@ Much smaller masses are possible if inflation occurs after the axion mass turns 
 %If cosmic inflation occurs before the axion mass ``turns on``, it is possible to create axions with a different abundance, and thus avoid the lower bound on the axion mass [NEEDSREF]. Thus proposed experiments to search for dark matter axions with nanoeV and picoeV masses are a completentary way to probe possible dark matter axion parameter space.
 
 %Astrophysical arguments constrain a fair portion of the possible phase space; giving an upper bound on the axion mass of approximately 1 meV and an upper bound on the axion to photon coupling of $10^{-10}$ 1/GeV.
-\section{Detection Strategies}
+\section{Detection Strategies}\label{sec:Detect}
 %For WISPs, direct searches primarily use the ALP to two photon vertex, as it is easy to produce large electromagnetic fields in the laboratory and easy to detect photons. Searches assuming that the ALP is the dark matter are only using microwave cavities as resonant detectors \cite{admx10} although a Rydberg atom detection experiment was performed \cite{yamamoto00}. These experiments depend on the dark matter density at Earth. There are also new ideas involving the axion as inducing an oscillating electron dipole moment in nucleons \cite{budker13}, which will be sensitive to  ALPs of a different mass than those in the microwave cavity experiments. There are other experiments looking for axion-like particles, although they do not use dark matter as the source of the WISPs. These involve looking for axions produced in the sun (CAST) \cite{cast11} or directly producing axions from the two photon vertex using a laser and strong magnetic field (ALPS-I, ALPS-II) \cite{ehret10}. The direct production or light-shining-through-wall experiments has the least number of assumptions, but these experiments (solar, microwave cavity, lsw) together form a complementary way of searching for ALPs with the two-photon vertex.
 %\subsection{Direct Searches}
 
 %Direct searches are those which attempt to directly detect signatures of axion interactions with matter in the laboratory. Most of these searches utilize the axion to two photon coupling. 
-Methods to search for dark matter axions have been ongoing for the last four decades; however, since dark matter candidates by definition interact very feebly with ordinary matter, searching for any of these particles is experimentally challenging.  As this thesis is concerned with a dark matter axion search, I will briefly review the techniques used to search for axions. These include searches using the Primakoff effect: solar helioscopes, light-shining-through-wall (photon regeneration) experiments, and microwave cavity haloscopes. In addition there are non-Primakoff searches, looking for macroscopic forces or oscillating electric dipole moments.
+%Methods to search for dark matter axions have been ongoing for the last four decades; however, since dark matter candidates by definition interact very feebly with ordinary matter, searching for any of these particles is experimentally challenging.  
+%This section provides a brief survey of the state of current experimental searches for axions. The different approaches are described with their model assumptions (e.g. axions from dark matter, or axion flux from the sun). 
+%As this thesis is concerned with a dark matter axion search, I will briefly review the laboratory techniques used to search for axions. 
+This section provides a brief survey of the state of current experimental searches for axions. The different approaches are described with their model assumptions (e.g. axions from dark matter, or high axion flux from the sun). The main experimental strategies use the Primakoff effect. They are: solar helioscopes, light-shining-through-wall (photon regeneration) experiments, and microwave cavity haloscopes. In addition there are non-Primakoff searches, looking for macroscopic forces or oscillating electric dipole moments.
 
 %\begin{description}
 \textbf{Solar Helioscopes}
@@ -783,7 +809,7 @@ Note that the hidden photon form factor $G$ is the same as the axion form factor
 
 The axion form factor is only non-zero when the scalar product of the cavity electric field and the external magnetic field is non-zero. This means, for a non-zero form factor, we must operate with transverse magnetic modes which have an axial electric field. The $\text{ª}_{0n0}$ modes have a non-zero form factor and $C$ scales as 
 \begin{align}
-C_{0n0} \propto x_{0n}
+C_{0n0} \propto frac{4}{x_{0n}^2}
 \end{align}
 for cylindrical cavities, where $x_{0n}$ is the nth root of the first order Bessel function $J_0(r)$. This goes down approximately as $n$ so with increasing mode index, the form factor goes down quickly.
 
@@ -1354,7 +1380,7 @@ another amp & MITEQ AFS3-00100400-13-10P-4 \\ \hline
 IQ mixer & MITEQ IR0502LC1Q
 \end{tabular}
 \end{center}
-\label{default}
+\label{tab:ModelNumbers}
 \end{table}%
 
 A vacuum window is in place after the directional coupler which allows us to pump on the waveguide. Then comes a waveguide RF filter with a bandpass from 32.6-36 GHz. Then a waveguide to coax adaptor, and a a mechanical RF latching switch (RLC electronics 1 pole 2 throw). The custom receiver chain was designed by Penny Slocum, with three stages of mixing and bandpass filters to suppress image frequencies and harmonics. The image frequency is at $\omega_i = \omega_{LO} - \omega_{IF} = 2\omega_{LO}-\omega_{RF}$. The first LO comes from Anritsu MG3694C signal generator (so is tunable) with output power level of +15 dBm and goes to the mixer with conversion loss 12 dB that mixes the signal to the 4 GHz range. The image frequency for a 34.29 GHz RF signal would be 26 GHz (assuming LO mixes RF down to 4.09), which is attenuated by the waveguide RF filter. Then there are two cascaded amplifiers in the 4 GHz with total gain 60 dB (and a filter before and after them with width 1.5 GHz around a central frequency of 4.1 GHz), and second mixer with local oscillator fixed at 3.5 GHz. This mixes the signal down to around 590 MHz. Again, the image frequency is now 2.1 GHz. There is then another amplifier with 30 dB gain, and a 25 MHz filter around 590 MHz (again before and after the filter). The image frequency at this point is the same as the input frequency as we are mixing down to DC. The last mixer is an IQ mixer that mixes 590 MHz down to zero. There are two outputs, the I and Q channel, and each has a 4 MHz lowpass filter at the output. THe BNC outputs go to an SRS SR445A voltage pre-amplifier, set to 50 ohm input impedance and voltage gain of 5. This then goes to the PCI-5114 digitizer card, which samples at a 10 MHz rate set by the external digital clock with a resolution of 8 bits. The reference clock is the 10 MHz clock inside the signal generator which send out the first local oscillator signal.
@@ -1989,7 +2015,7 @@ Frequency (GHz) & PSD (mW/Hz) & Threshold \\ \hline
 34.5192515216 & 1.30334171873e-14 & 1.24182640031e-14\\ \hline
 \end{tabular}
 \end{center}
-\label{default}
+\label{tab:Candidates}
 \end{table}%
 
 An alternative approach is to estimate the noise by taking the local standard error of 1000 bins in the combined power spectrum, and then set the threshold as 3 times that local standard error. This approach has a lower threshold and thus more candidates arise. 
@@ -2306,8 +2332,8 @@ For YMCE's pilot run, 600 MHz of frequency space were covered. Portions of the e
 
 One advantage of small cavities is that they can be relatively easily interchanged. This could compensate for the coverage gaps caused by mode crossings. For a future experiment of YMCE, it seems feasible to imagine working with longer cavities, to improve the volume by a factor of up to four, which improves the sensitivity to axions by a factor of two. Using multiple cavities to scan a continuous rangej, these cavitys should be in the $\text{TM}_{020}$. It is not possible to measure the $\text{TM}_{010}$ and $\text{TM}_{020}$ modes in parallel as the $\text{TM}_{010}$ resonant frequency is at 15 GHz and below the cutoff frequency of the waveguides.
 
-\chapter{Appendix}
-\section{Confidence Levels}
+\appendix
+\chapter{Confidence Levels}
 The fraction of power appearing in a bin is only exactly one when the axion frequency is equal to central frequency of the bin. For any offset $\Delta$, the fraction of power appearing in that bin is then 
 
 \begin{align}
@@ -2334,9 +2360,37 @@ Averaging over the possible $\Delta$,
 
 Integrating the above expression shows that a power level of 6.54$\sigma$ has a 95$\%$ probability of passing the cut. As there are two runs, we need the probability of it passing both cuts is $.95 \times .95 = .9$, for a total confidence level of $90\%$.
 
-\section{Noise Temperature}
+\chapter{Noise Temperature}
+Let's start with a simple model: a noiseless amplifier with two traveling waves $$a_{n}$$ and $$b_{n}$$ with a source impedance $$\Gamma_{s}$$. If you were to do a scattering measurement, you would get this relationship:
+
+$$\begin{bmatrix} b_1 - b_n\\b_2\end{bmatrix} = \begin{bmatrix}s_{11} & s_{12} \\s_{21} & s_{22} \end{bmatrix} \times \begin{bmatrix}a_1 + a_n  \\a_2\end{bmatrix}$$, where $a_i$ is the ingoing wave at port i and $b_i$ is the outgoing wave at port i.
+
+Now, for some assumptions. 
+
+1. Assume that you can make $a_n$ and $b_n$ uncorrelated:
+
+$$ \overline{a_nb_n^*} = 0 $$
+
+This happens to be true when the characteristic impedance Z is equal to the optimal source impedance (see Penfield's paper for the exact expression).
+
+The strength of $a_n$ defines a temperature $T_a$:
+
+$$T_a = \frac{|a_n|^2}{k\Delta f}$$
+
+and likewise with$T_b$.
+
+The minimum noise figure when be $$F-1 = \frac{T_a}{T_0}$$.
+
+If the source impedance is $$Z_s = R_s + jX_s$$, the reflection coefficient of the source is $$\Gamma_s = \frac{Z_s-Z}{Z_s+Z^*}$$
+
+Then the noise figure is $$F-1 = \frac{T_a+T_b|\Gamma_s|^2}{T_0(1-|\Gamma_s|^2)} =\frac{T_a}{T_0} + \frac{T_a+T_b}{T_0}\frac{{|\Gamma_s}|^2}{(1-|\Gamma_s|^2)}$$
+
+For a reflection coefficient at the amplifier of $\Gamma_a$, the total incident noise wave becomes $$\frac{1}{1-\Gamma_a\Gamma_s}T_0$$
+
+If a lossless line of length L is introduced between the souce and amplifier, we must use $$\Gamma_s(z=L) = \Gamma_s e^{-2j\beta L}$$ where $$\lambda = \frac{2\pi}{\beta}$$ and $$\beta = \omega \sqrt{LC}$$
 
 
+\backmatter
 %\printbibliography
 \bibliographystyle{ieeetr}
 \bibliography{thesisbib}
